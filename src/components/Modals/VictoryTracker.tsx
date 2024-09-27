@@ -29,7 +29,7 @@ const VictoryTracker: React.FC<VictoryTrackerProps> = () => {
             toast.error("You must be logged in to submit form.", { position: "top-left", theme: "dark" });
             return;
         }
-        if (!inputs.date || !inputs.statusUpdate || !inputs.noOfHours ) return alert('Please fill all fields');
+        if (!inputs.statusUpdate || !inputs.noOfHours ) return alert('Please fill all fields');
         try{            
             // const dateWiseFormArray = {
             //     submittedAt : Date.now()
@@ -43,8 +43,10 @@ const VictoryTracker: React.FC<VictoryTrackerProps> = () => {
             }
             await updateDoc(userRef, {
                 victoryTracker: arrayUnion(newFormData)
-            })
-            router.push("/learn");
+            }).then(function(){
+                toast.success("Successfully Submitted form!");
+                setTimeout(function(){ location.reload(); }, 3000);
+            });
         }catch (error: any) {
 			toast.error(error.message, { position: "top-center" });
 		} finally {

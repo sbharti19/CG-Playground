@@ -21,7 +21,7 @@ const MonthlyProgress: React.FC<MonthlyProgressProps> = () => {
 			toast.error("You must be logged in to submit form.", { position: "top-left", theme: "dark" });
 			return;
 		}
-        if (!inputs.skillsAcquired || !inputs.onGoingTasks || !inputs.submittedAt ) return alert('Please fill all fields');
+        if (!inputs.skillsAcquired || !inputs.onGoingTasks ) return alert('Please fill all fields');
         try{            
             // const dateWiseFormArray = {
             //     submittedAt : Date.now()
@@ -35,8 +35,11 @@ const MonthlyProgress: React.FC<MonthlyProgressProps> = () => {
             }
             await updateDoc(userRef, {
                 monthlyProgress: arrayUnion(newFormData)
-            })
-            router.push("/learn");
+            }).then(function(){
+                toast.success("Successfully Submitted form!");
+                setTimeout(function(){ location.reload(); }, 3000);
+            });
+            // router.push("/GrowthTracker");
         }catch (error: any) {
 			toast.error(error.message, { position: "top-center" });
 		} finally {
