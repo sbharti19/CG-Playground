@@ -38,6 +38,10 @@ const Signup: React.FC<SignupProps> = () => {
 				dislikedProblems: [],
 				solvedProblems: [],
 				starredProblems: [],
+				goalDigger: [],
+                victoryTracker: [],
+                monthlyProgress: [],
+ 
 			};
 			await setDoc(doc(firestore, "users", newUser.user.uid), userData);
 			router.push("/");
