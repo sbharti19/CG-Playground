@@ -22,7 +22,7 @@ const Sidebar = () => {
                 <SidebarLink redirectTo="/" text="Rapid Reads" Icon={MdOutlineMarkChatUnread} />
                 <SidebarLink redirectTo="Problems" text="Solve" Icon={BiHash} />
                 <SidebarLink redirectTo="Quiz" text="Quiz-a-thon" Icon={FaCode} />
-                <SidebarLink redirectTo="" text="Growth Tracker" Icon={FaRegEye} />
+                <SidebarLink redirectTo="GrowthTracker" text="Growth Tracker" Icon={FaRegEye} />
                 <SidebarLink redirectTo="#" text="Leaderboard" Icon={BiBarChartAlt2} />
             </div>
 
