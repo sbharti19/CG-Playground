@@ -60,7 +60,7 @@ const Sidebar: React.FC<SidebarProps> = ({problemPage}) => {
             </div>
 
             <div
-                className="text-[#d9d9d9] flex items-center justify-center mt-auto hoverEffect xl:ml-auto xl:-mr-5 px-4 py-2"
+                className="text-[#d9d9d9] flex items-center justify-center mt-auto hoverEffect m-auto mb-2 px-4 py-2"
             >
                 	{problemPage && (
 					<div className='flex items-center gap-4 flex-1 justify-center'>
