@@ -1,5 +1,5 @@
 import React from 'react'
-import { BiBarChartAlt2, BiHash} from "react-icons/bi"
+import { BiBarChartAlt2, BiHash } from "react-icons/bi"
 import { MdOutlineMarkChatUnread } from "react-icons/md";
 import { FaChevronLeft, FaChevronRight, FaCode, FaRegEye } from 'react-icons/fa'
 import Link from 'next/link'
@@ -19,9 +19,9 @@ type SidebarProps = {
 	problemPage?: boolean;
 };
 
-const Sidebar: React.FC<SidebarProps> = ({problemPage}) => {
+const Sidebar: React.FC<SidebarProps> = ({ problemPage }) => {
 
-    const [user] = useAuthState(auth);
+	const [user] = useAuthState(auth);
 	const setAuthModalState = useSetRecoilState(authModalState);
 	const router = useRouter();
 
@@ -44,25 +44,25 @@ const Sidebar: React.FC<SidebarProps> = ({problemPage}) => {
 		}
 	};
 
-    return (
-        <div className='hidden sm:flex flex-col items-start xl:items-start bg-dark-layer-1 xl:w-[240px] p-2 fixed h-full border-r border-gray-400  xl:pr-8'>
-            <div className='flex w-48 mb-8 h-auto cursor-pointer hoverEffect'>
-                
-                <Link href="/"><img src="/a.png" alt="CG Playground" /></Link>
-            </div>
-            <div className='space-y-3 mt-4 mb-2.5 text-lg' >
-                <div className="cursor-pointer"></div>
-                <SidebarLink redirectTo="/" text="Rapid Reads" Icon={MdOutlineMarkChatUnread} />
-                <SidebarLink redirectTo="Problems" text="Solve" Icon={BiHash} />
-                <SidebarLink redirectTo="Quiz" text="Quiz-a-thon" Icon={FaCode} />
-                <SidebarLink redirectTo="GrowthTracker" text="Growth Tracker" Icon={FaRegEye} />
-                <SidebarLink redirectTo="#" text="Leaderboard" Icon={BiBarChartAlt2} />
-            </div>
+	return (
+		<div className='hidden sm:flex flex-col items-start xl:items-start bg-dark-layer-1 xl:w-[240px] p-2 fixed h-full border-r border-gray-400  xl:pr-8'>
+			<div className='flex w-48 mb-8 h-auto cursor-pointer hoverEffect'>
 
-            <div
-                className="text-[#d9d9d9] flex items-center justify-center mt-auto hoverEffect m-auto mb-2 px-4 py-2"
-            >
-                	{problemPage && (
+				<Link href="/"><img src="/a.png" alt="CG Playground" /></Link>
+			</div>
+			<div className='space-y-3 mt-4 mb-2.5 text-lg' >
+				<div className="cursor-pointer"></div>
+				<SidebarLink redirectTo="/" text="Rapid Reads" Icon={MdOutlineMarkChatUnread} />
+				<SidebarLink redirectTo="Problems" text="Solve" Icon={BiHash} />
+				<SidebarLink redirectTo="Quiz" text="Quiz-a-thon" Icon={FaCode} />
+				<SidebarLink redirectTo="GrowthTracker" text="Growth Tracker" Icon={FaRegEye} />
+				<SidebarLink redirectTo="Leaderboard" text="Leaderboard" Icon={BiBarChartAlt2} />
+			</div>
+
+			<div
+				className="text-[#d9d9d9] flex items-center justify-center mt-auto hoverEffect m-auto mb-2 px-4 py-2"
+			>
+				{problemPage && (
 					<div className='flex items-center gap-4 flex-1 justify-center'>
 						<div
 							className='flex items-center justify-center rounded bg-dark-fill-3 hover:bg-dark-fill-2 h-8 w-8 cursor-pointer'
@@ -88,7 +88,7 @@ const Sidebar: React.FC<SidebarProps> = ({problemPage}) => {
 					</div>
 				)}
 
-<div className='flex items-center space-x-4 flex-1 justify-end'>
+				<div className='flex items-center space-x-4 flex-1 justify-end'>
 					<div>
 					</div>
 					{!user && (
@@ -116,10 +116,10 @@ const Sidebar: React.FC<SidebarProps> = ({problemPage}) => {
 					)}
 					{user && <Logout />}
 				</div>
-            </div>
+			</div>
 
-        </div>
-    )
+		</div>
+	)
 }
 
 export default Sidebar
