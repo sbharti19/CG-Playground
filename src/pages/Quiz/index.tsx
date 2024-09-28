@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { quiz } from './data.js';
+import { quiz } from './data';
 import Link from 'next/link.js';
 
 export default function Quiz() {
@@ -9,6 +9,7 @@ export default function Quiz() {
   const [checked, setChecked] = useState<boolean>(false);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
+  const [startQuiz, setShowQuiz] = useState(false);
   const [result, setResult] = useState({
     score: 0,
     correctAnswers: 0,
@@ -35,14 +36,14 @@ export default function Quiz() {
     setResult((prev) =>
       selectedAnswer
         ? {
-          ...prev,
-          score: prev.score + 5,
-          correctAnswers: prev.correctAnswers + 1,
-        }
+            ...prev,
+            score: prev.score + 5,
+            correctAnswers: prev.correctAnswers + 1,
+          }
         : {
-          ...prev,
-          wrongAnswers: prev.wrongAnswers + 1,
-        }
+            ...prev,
+            wrongAnswers: prev.wrongAnswers + 1,
+          }
     );
     if (activeQuestion !== questions.length - 1) {
       setActiveQuestion((prev) => prev + 1);
@@ -55,7 +56,26 @@ export default function Quiz() {
 
   return (
     <div className=' bg-dark-layer-1 w-screen h-screen'>
-      <div className="max-w-xl w-full mx-auto p-4 ">
+      {!startQuiz ? (
+         <div className="max-w-xl w-full p-4 mx-auto flex rounded-md justify-center items-center min-h-screen ">
+         <div>
+             <div className="bg-gray-100 justify-center p-4 mt-8 w-96 h-72 rounded-md">
+              
+               <button
+                 onClick={() => {setShowQuiz(true)}}
+                 className="w-80 mt-24 ml-4 bg-amber-500 mr-4 justify-center py-4 text-white rounded-3xl font-semibold cursor-pointer"
+               >
+                 Start the Quiz
+               </button>
+               <div className ="text-end">
+               <Link href="/" className="text-dark-layer-1 text-l font-bold hover:text-cyan-700 underline">
+             Go back to home
+           </Link>
+           </div>
+   </div>
+           </div>
+       </div>
+      ):( <div className="max-w-xl w-full mx-auto p-4 ">
         <div>
           <h2 className="text-gray-300">
             Question: {activeQuestion + 1}
@@ -71,10 +91,11 @@ export default function Quiz() {
                   <li
                     key={idx}
                     onClick={() => onAnswerSelected(answer, idx)}
-                    className={`list-none cursor-pointer my-2 p-4 text-black border border-gray-300 ${selectedAnswerIndex === idx
+                    className={`list-none cursor-pointer my-2 p-4 text-black border border-gray-300 ${
+                      selectedAnswerIndex === idx
                         ? 'bg-dark-yellow text-white'
                         : 'hover:bg-gray-300'
-                      }`}
+                    }`}
                   >
                     <span>{answer}</span>
                   </li>
@@ -118,18 +139,21 @@ export default function Quiz() {
               >
                 Restart
               </button>
-              <div className="text-end">
-                <Link href="/" className="text-white text-cyan-600 text-l font-bold hover:text-gray-300 underline">
-                  Go back to home
-                </Link>
-              </div>
+              <div className ="text-end">
+              <Link href="/" className="text-white bg-dark-layer-1 text-l font-bold hover:text-cyan-700  underline">
+            Go back to home
+          </Link>
+          </div>
             </div>
           )}
         </div>
-      </div>
-      <Link href="/Announcements">
-        <img src="/announcement-gif.gif" alt="Announcements" className="max-w-[5%] fixed right-20 bottom-10" />
-      </Link>
+      </div>)
+
+   
+}
     </div>
   );
 }
+
+
+
