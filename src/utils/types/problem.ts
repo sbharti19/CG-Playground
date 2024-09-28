@@ -30,3 +30,18 @@ export type DBProblem = {
 	videoId?: string;
 	link?: string;
 };
+
+export type DBUsers = {
+	uid: string;
+	createdAt: string;
+	updatedAt: string;
+	dislikedProblems: Example[];
+	displayName: string;
+	email: string;
+	goalDigger: Example[];
+	likedProblems: Example[];
+	solvedProblems: Example[];
+	starredProblems: Example[];
+	monthlyProgress: Example[];
+	victoryTracker: Example[];
+};
