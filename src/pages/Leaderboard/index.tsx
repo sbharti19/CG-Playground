@@ -18,7 +18,7 @@ export default function Problems() {
             <Sidebar />
 				<div className=' overflow-x-auto mx-auto px-6 pb-10'>
 				<h2 className="text-white text-center text-3xl p-2">LeaderBoard</h2>										
-					<table className='text-sm text-left text-gray-500 dark:text-gray-400  w-full max-w-[1200px] mx-auto mr-[10rem]'>						
+					<table className='text-sm xl:text-left text-gray-500 dark:text-gray-400 sm:w-[51%] xl:w-[60%] max-w-[1200px] mx-auto mr-[10rem]'>						
 							<thead className='text-s text-amber-500 uppercase dark:text-gray-400 border-b '>
 								<tr>
 									<th scope='col' className='px-6 py-3 w-0 font-medium'>
