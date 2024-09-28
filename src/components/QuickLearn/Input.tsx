@@ -67,7 +67,7 @@ const Input: React.FC = () => {
                     });
                 });
             }
-
+            document.getElementById("text-input").value = "";
             setInput("");
             setSelectedFile(null);
             setShowEmojis(false);
@@ -90,6 +90,7 @@ const Input: React.FC = () => {
 
                 <div className='w-[90%]'>
                     <textarea
+                        id='text-input'
                         className='w-[100%] bg-transparent outline-none text-[20px]'
                         rows={2}
                         placeholder="Add an informative shot!"
@@ -138,7 +139,7 @@ const Input: React.FC = () => {
                                 className="bg-[#1d9bf0] text-white rounded-full px-4 py-1.5 font-bold shadow-md hover:bg-[#1a8cd8] disabled:hover:bg-[#1d9bf0] disabled:opacity-50 disabled:cursor-default"
                                 disabled={!input.trim() && !selectedFile}
                                 onClick={sendPost} >
-                                Tweet
+                                Post
                             </button>
 
                         </div>

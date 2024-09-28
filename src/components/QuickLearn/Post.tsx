@@ -74,10 +74,10 @@ const Post: React.FC<PostProps> = ({ id, post }) => {
     });
   };
 
-    return (<div className='mt-4 border-t border-gray-500 px-4 pt-6 pb-4 cursor-pointer' onClick={() => router.push(`/${id}`)}>
+    return (<div className='mt-4 border-t border-gray-500 px-4 pt-6 pb-4 cursor-pointer'>
         <div className='grid grid-cols-[48px,1fr] gap-4'>
             <div>
-                <img className='h-12 w-12 rounded-full object-cover' src={post?.userImg} alt="" />
+                <img className='h-12 w-12 rounded-full object-cover' src="/avatar.png" alt="" />
             </div>
             <div>
                 <div className='block sm:flex gap-1'>
@@ -88,7 +88,7 @@ const Post: React.FC<PostProps> = ({ id, post }) => {
                     </div>
                 </div>
                 <p>{post?.text}</p>
-                {post?.image && (<img className='max-h-[450px] object-cover rounded-[20px] mt-2' src={post?.image} alt="" />)}
+                {post?.image && (<img className='max-h-[450px] object-cover rounded-[20px] mt-2' src="/avatar.png" alt="avatar" />)}
                 <div className='flex justify-between text-[20px] mt-4 w-[80%]'>
                     <div className='flex gap-1 items-center'>
                         <BsChat className='hoverEffect w-7 h-7 p-1' onClick={(e) => { e.stopPropagation(); openModal(); }} />

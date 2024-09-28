@@ -22,9 +22,9 @@ const Feed: React.FC = () => {
 
   return (
     <div className='sm:ml-[81px] xl:ml-[340px] w-[900px] min-h-screen  text-white py-2'>
-      <div className='sticky top-0 bg-black flex justify-between font-medium text-[20px] px-4 py-2'>
-        Search
-        <HiOutlineSparkles />
+      <div className='sticky justify-center text-[#1d9bf0] top-0 flex font-medium text-[1.5rem] px-4 py-2'>
+        Collaborate and Q/A
+        {/* <HiOutlineSparkles /> */}
       </div>
 
       <Input />
