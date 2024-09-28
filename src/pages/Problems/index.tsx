@@ -1,6 +1,7 @@
 import ProblemsTable from "@/components/ProblemsTable/ProblemsTable";
 import Sidebar from "@/components/Sidebar/Sidebar";
 import useHasMounted from "@/hooks/useHasMounted";
+import Link from "next/link";
 
 import { useState } from "react";
 
@@ -13,7 +14,7 @@ export default function Problems() {
 	return (
 		<>
 			<div className='bg-dark-layer-2 min-h-screen'>
-            <Sidebar />
+				<Sidebar />
 				<div className=' overflow-x-auto mx-auto px-6 pb-10'>
 					{loadingProblems && (
 						<div className='max-w-[1200px] mx-auto sm:w-7/12 w-full animate-pulse'>
@@ -48,6 +49,9 @@ export default function Problems() {
 						<ProblemsTable setLoadingProblems={setLoadingProblems} />
 					</table>
 				</div>
+				<Link href="/Announcements">
+					<img src="/announcement-gif.gif" alt="Announcements" className="max-w-[5%] fixed right-20 bottom-10" />
+				</Link>
 			</div>
 		</>
 	);
