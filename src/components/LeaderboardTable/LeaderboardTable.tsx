@@ -18,7 +18,7 @@ const LeaderboardTable: React.FC<LeaderboardTableProps  > = ({setLeaderboardData
                 return (
                     <tr key={idx}>
                         <th scope='col' className='px-6 py-3 w-0 font-medium'>
-                            { user.solvedProblems.length}
+                            { idx + 1}
                         </th>
                         <th scope='col' className='px-6 py-3 w-0 font-medium'>
                             { user.solvedProblems.length}
