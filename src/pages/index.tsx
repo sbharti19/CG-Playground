@@ -15,7 +15,7 @@ export default function Home() {
 				<Sidebar />
 				<Feed />
 				<div>
-					<Link href="/📢Announcements">
+					<Link href="/Announcements">
 						<img src="/announcement-gif.gif" alt="Announcements" className="max-w-[5%] fixed right-20 bottom-10"/>
 					</Link>
 				</div>
