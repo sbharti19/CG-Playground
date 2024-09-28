@@ -24,8 +24,8 @@ export default function Learn() {
         setOpen(true);
     };
     return ( <div className='bg-dark-layer-2 min-h-screen text-yellow-400 text-center'>
-                <div className="text-4xl p-3"></div>
-                {/* <div className="text-4xl p-3">Learnings</div> */}
+                {/* <div className="text-4xl p-3"></div> */}
+                <div className="text-4xl p-3">Growth Tracker</div>
                 <div    className="max-w-screen-xl mx-auto">
                     <div className="m-auto mb-4 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
