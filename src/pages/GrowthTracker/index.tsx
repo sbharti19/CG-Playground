@@ -71,6 +71,9 @@ export default function Learn() {
 						<img src="/homeBtn.webp" alt="Home" className="max-w-[5%] fixed right-20 bottom-10"/>
 					</Link>
 				</div>
+                <Link href="/Announcements">
+						<img src="/announcement-gif.gif" alt="Announcements" className="max-w-[5%] fixed left-20 bottom-10"/>
+					</Link>
                 </div>
     </ div>)
 }
